@@ -73,14 +73,8 @@ Prism.languages.graphql = {
 	},
 	'keyword': /\b(?:directive|enum|extend|fragment|implements|input|interface|on|repeatable|scalar|schema|subscription|type|union)\b/,
 	'operator': /[!=|&]|\.{3}/,
-	'property-query': {
-		pattern: /\w+(\s*\()/,
-		lookahead: true
-	},
-	'object': {
-		pattern: /\w+(\s*{)/,
-		lookahead: true
-	},
+	'property-query': /\w+(?=\s*\()/,
+	'object': /\w+(?=\s*{)/,
 	'punctuation': /[!(){}\[\]:=,]/,
 	'property': /\w+/
 };

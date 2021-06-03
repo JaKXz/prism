@@ -1,5 +1,5 @@
 {
-	orders(arguments) {
+	orders(id: 4) {
 		edges {
 			node {
 				# Order fields
@@ -20,7 +20,9 @@
 	["punctuation", "{"],
 	["property-query", "orders"],
 	["punctuation", "("],
-	["property", "arguments"],
+	["attr-name", "id"],
+	["punctuation", ":"],
+	["number", "4"],
 	["punctuation", ")"],
 	["punctuation", "{"],
 	["object", "edges"],
