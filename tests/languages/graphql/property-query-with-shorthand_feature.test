@@ -1,0 +1,46 @@
+{
+	orders(arguments) {
+		edges {
+			node {
+				# Order fields
+				# Query fields
+			}
+			cursor
+		}
+		pageInfo {
+			hasNextPage
+			hasPreviousPage
+		}
+	}
+}
+
+----------------------------------------------------
+
+[
+	["punctuation", "{"],
+	["property-query", "orders"],
+	["punctuation", "("],
+	["property", "arguments"],
+	["punctuation", ")"],
+	["punctuation", "{"],
+	["object", "edges"],
+	["punctuation", "{"],
+	["object", "node"],
+	["punctuation", "{"],
+	["comment", "# Order fields"],
+	["comment", "# Query fields"],
+	["punctuation", "}"],
+	["property", "cursor"],
+	["punctuation", "}"],
+	["object", "pageInfo"],
+	["punctuation", "{"],
+	["property", "hasNextPage"],
+	["property", "hasPreviousPage"],
+	["punctuation", "}"],
+	["punctuation", "}"],
+	["punctuation", "}"]
+]
+
+----------------------------------------------------
+
+Providing a token for the query property from the global Query object when using the GraphQL shorthand for a query.

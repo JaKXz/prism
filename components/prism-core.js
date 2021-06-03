@@ -843,9 +843,10 @@ var Prism = (function (_self) {
 	 * @param {number} pos
 	 * @param {string} text
 	 * @param {boolean} lookbehind
+	 * @param {boolean} lookahead
 	 * @returns {RegExpExecArray | null}
 	 */
-	function matchPattern(pattern, pos, text, lookbehind) {
+	function matchPattern(pattern, pos, text, lookbehind, lookahead) {
 		pattern.lastIndex = pos;
 		var match = pattern.exec(text);
 		if (match && lookbehind && match[1]) {
@@ -853,6 +854,11 @@ var Prism = (function (_self) {
 			var lookbehindLength = match[1].length;
 			match.index += lookbehindLength;
 			match[0] = match[0].slice(lookbehindLength);
+		}
+
+		if (match && lookahead && match[1]) {
+			var lookaheadFirstChar = match[0].indexOf(match[1]);
+			match[0] = match[0].slice(0, lookaheadFirstChar);
 		}
 		return match;
 	}
@@ -888,6 +894,7 @@ var Prism = (function (_self) {
 				var patternObj = patterns[j];
 				var inside = patternObj.inside;
 				var lookbehind = !!patternObj.lookbehind;
+				var lookahead = !!patternObj.lookahead;
 				var greedy = !!patternObj.greedy;
 				var alias = patternObj.alias;
 
@@ -925,7 +932,7 @@ var Prism = (function (_self) {
 					var match;
 
 					if (greedy) {
-						match = matchPattern(pattern, pos, text, lookbehind);
+						match = matchPattern(pattern, pos, text, lookbehind, lookahead);
 						if (!match) {
 							break;
 						}
@@ -964,7 +971,7 @@ var Prism = (function (_self) {
 						str = text.slice(pos, p);
 						match.index -= pos;
 					} else {
-						match = matchPattern(pattern, 0, str, lookbehind);
+						match = matchPattern(pattern, 0, str, lookbehind, lookahead);
 						if (!match) {
 							continue;
 						}
