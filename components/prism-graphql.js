@@ -19,13 +19,13 @@ Prism.languages.graphql = {
 	'number': /(?:\B-|\b)\d+(?:\.\d+)?(?:e[+-]?\d+)?\b/i,
 	'boolean': /\b(?:true|false)\b/,
 	'variable-input': {
-		pattern: /(mutation.*)\$[\w_]+/i,
+		pattern: /(\bmutation.*)\$\w+/,
 		alias: 'variable',
 		lookbehind: true
 	},
 	'variable': /\$[a-z_]\w*/i,
 	'atom-input': {
-		pattern: /(mutation.*:\s*)\b[A-Z_]\w*\b!?/,
+		pattern: /(\bmutation.*:\s*)\b[A-Z_]\w*\b!?/,
 		lookbehind: true,
 		alias: 'class-name'
 	},
@@ -39,7 +39,7 @@ Prism.languages.graphql = {
 	},
 	'constant': /\b(?!ID\b)[A-Z][A-Z_\d]*\b/,
 	'class-name': {
-		pattern: /(\b(?:enum|implements|interface|on|scalar|type|union)\s+|&\s*|:\s*|\s*\[)[A-Z_]\w*/,
+		pattern: /(\b(?:enum|implements|interface|on|scalar|type|union)\s+|&\s*|:\s*|\[)[A-Z_]\w*/,
 		lookbehind: true
 	},
 	'fragment': {
@@ -48,7 +48,7 @@ Prism.languages.graphql = {
 		alias: 'function'
 	},
 	'property-mutation': {
-		pattern: /\b(mutation.*(?:[\n\r\u2028\u2029][\n\s]*)?)\b\w+/g,
+		pattern: /\b(mutation.*$\s+)\b\w+/m,
 		lookbehind: true,
 		greedy: true
 	},
