@@ -11,6 +11,7 @@ const { visitRegExpAST } = require('regexpp');
 const { transform, combineTransformers, getIntersectionWordSets, JS, Words, NFA, Transformers } = require('refa');
 const scslre = require('scslre');
 const path = require('path');
+const { argv } = require('yargs');
 
 /**
  * A map from language id to a list of code snippets in that language.
@@ -38,7 +39,7 @@ for (const languageIdentifier in testSuite) {
 
 
 for (const lang in languages) {
-	if (lang === 'meta') {
+	if (lang === 'meta' || (!!argv.language && lang !== argv.language)) {
 		continue;
 	}
 
@@ -170,6 +171,7 @@ function testPatterns(Prism, mainLanguage) {
 							parent,
 							path,
 							lookbehind: key === 'pattern' && parent && !!parent.lookbehind,
+							lookahead: !!parent.lookahead,
 							reportError: message => errors.push(message)
 						});
 					} catch (error) {
@@ -288,7 +290,10 @@ function testPatterns(Prism, mainLanguage) {
 	});
 
 	it('- should not have unused capturing groups', function () {
-		forEachPattern(({ ast, tokenPath, lookbehind, reportError }) => {
+		forEachPattern(({ ast, tokenPath, lookbehind, lookahead, reportError }) => {
+			if (lookahead) {
+				return;
+			}
 			forEachCapturingGroup(ast.pattern, ({ group, number }) => {
 				const isLookbehindGroup = lookbehind && number === 1;
 				if (group.references.length === 0 && !isLookbehindGroup) {
