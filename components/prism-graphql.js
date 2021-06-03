@@ -40,8 +40,7 @@ Prism.languages.graphql = {
 	'constant': /\b(?!ID\b)[A-Z][A-Z_\d]*\b/,
 	'class-name': {
 		pattern: /(\b(?:enum|implements|interface|on|scalar|type|union)\s+|&\s*|:\s*|\s*\[)[A-Z_]\w*/,
-		lookbehind: true,
-		greedy: true
+		lookbehind: true
 	},
 	'fragment': {
 		pattern: /(\bfragment\s+|\.{3}\s*(?!on\b))[a-zA-Z_]\w*/,
