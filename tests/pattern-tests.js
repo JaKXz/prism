@@ -171,7 +171,6 @@ function testPatterns(Prism, mainLanguage) {
 							parent,
 							path,
 							lookbehind: key === 'pattern' && parent && !!parent.lookbehind,
-							lookahead: !!parent.lookahead,
 							reportError: message => errors.push(message)
 						});
 					} catch (error) {
@@ -290,10 +289,7 @@ function testPatterns(Prism, mainLanguage) {
 	});
 
 	it('- should not have unused capturing groups', function () {
-		forEachPattern(({ ast, tokenPath, lookbehind, lookahead, reportError }) => {
-			if (lookahead) {
-				return;
-			}
+		forEachPattern(({ ast, tokenPath, lookbehind, reportError }) => {
 			forEachCapturingGroup(ast.pattern, ({ group, number }) => {
 				const isLookbehindGroup = lookbehind && number === 1;
 				if (group.references.length === 0 && !isLookbehindGroup) {
