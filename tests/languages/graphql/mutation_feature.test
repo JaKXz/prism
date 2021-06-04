@@ -13,7 +13,7 @@ mutation orderUpdate($input: OrderInput!) {
 ----------------------------------------------------
 
 [
-	["keyword-mutation", "mutation"],
+	["keyword", "mutation"],
 	["definition-mutation", "orderUpdate"],
 	["punctuation", "("],
 	["variable-input", "$input"],

@@ -62,15 +62,7 @@ Prism.languages.graphql = {
 		lookbehind: true,
 		alias: 'function'
 	},
-	'keyword-mutation': {
-		pattern: /\b(?:mutation)\b/,
-		alias: 'keyword'
-	},
-	'keyword-query': {
-		pattern: /\b(?:query)\b/,
-		alias: 'keyword'
-	},
-	'keyword': /\b(?:directive|enum|extend|fragment|implements|input|interface|on|repeatable|scalar|schema|subscription|type|union)\b/,
+	'keyword': /\b(?:directive|enum|extend|fragment|implements|input|interface|mutation|on|query|repeatable|scalar|schema|subscription|type|union)\b/,
 	'operator': /[!=|&]|\.{3}/,
 	'property-query': /\w+(?=\s*\()/,
 	'object': /\w+(?=\s*{)/,

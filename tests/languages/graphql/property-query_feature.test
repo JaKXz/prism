@@ -9,7 +9,7 @@ query getProductById($id: ID!) {
 ----------------------------------------------------
 
 [
-	["keyword-query", "query"],
+	["keyword", "query"],
 	["definition-query", "getProductById"],
 	["punctuation", "("],
 	["variable", "$id"],
