@@ -14,7 +14,7 @@ query getProductById($id: ID!) {
 	["punctuation", "("],
 	["variable", "$id"],
 	["punctuation", ":"],
-	["class-name", "ID"],
+	["scalar", "ID"],
 	["operator", "!"],
 	["punctuation", ")"],
 	["punctuation", "{"],

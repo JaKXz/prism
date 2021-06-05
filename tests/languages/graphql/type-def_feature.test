@@ -25,12 +25,12 @@ type Droid implements Character {
 
 	["attr-name", "id"],
 	["punctuation", ":"],
-	["class-name", "ID"],
+	["scalar", "ID"],
 	["operator", "!"],
 
 	["attr-name", "name"],
 	["punctuation", ":"],
-	["class-name", "String"],
+	["scalar", "String"],
 	["operator", "!"],
 
 	["attr-name", "friends"],
@@ -54,7 +54,7 @@ type Droid implements Character {
 
 	["attr-name", "totalCredits"],
 	["punctuation", ":"],
-	["class-name", "Int"],
+	["scalar", "Int"],
 
 	["punctuation", "}"],
 
@@ -66,12 +66,12 @@ type Droid implements Character {
 
 	["attr-name", "id"],
 	["punctuation", ":"],
-	["class-name", "ID"],
+	["scalar", "ID"],
 	["operator", "!"],
 
 	["attr-name", "name"],
 	["punctuation", ":"],
-	["class-name", "String"],
+	["scalar", "String"],
 	["operator", "!"],
 
 	["attr-name", "friends"],
@@ -89,7 +89,7 @@ type Droid implements Character {
 
 	["attr-name", "primaryFunction"],
 	["punctuation", ":"],
-	["class-name", "String"],
+	["scalar", "String"],
 
 	["punctuation", "}"]
 ]
