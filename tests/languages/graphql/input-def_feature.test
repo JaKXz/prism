@@ -1,0 +1,70 @@
+input OrderInput {
+  id: ID!
+  customAttributes: [AttributeInput!]
+  customer: Customer
+  localizationExtensions: [LocalizationExtensionInput!]
+  metafields: [MetafieldInput!]
+  note: String!
+  shippingAddress: MailingAddressInput
+  tags: [String!]
+}
+
+----------------------------------------------------
+
+[
+	["keyword", "input"],
+	["atom-input", "OrderInput"],
+	["punctuation", "{"],
+
+	["attr-name", "id"],
+	["punctuation", ":"],
+	["scalar", "ID"],
+	["operator", "!"],
+
+	["attr-name", "customAttributes"],
+	["punctuation", ":"],
+	["punctuation", "["],
+	["atom-input", "AttributeInput"],
+	["operator", "!"],
+	["punctuation", "]"],
+
+	["attr-name", "customer"],
+	["punctuation", ":"],
+	["class-name", "Customer"],
+
+	["attr-name", "localizationExtensions"],
+	["punctuation", ":"],
+	["punctuation", "["],
+	["atom-input", "LocalizationExtensionInput"],
+	["operator", "!"],
+	["punctuation", "]"],
+
+	["attr-name", "metafields"],
+	["punctuation", ":"],
+	["punctuation", "["],
+	["atom-input", "MetafieldInput"],
+	["operator", "!"],
+	["punctuation", "]"],
+
+	["attr-name", "note"],
+	["punctuation", ":"],
+	["scalar", "String"],
+	["operator", "!"],
+
+	["attr-name", "shippingAddress"],
+	["punctuation", ":"],
+	["atom-input", "MailingAddressInput"],
+
+	["attr-name", "tags"],
+	["punctuation", ":"],
+	["punctuation", "["],
+	["scalar", "String"],
+	["operator", "!"],
+	["punctuation", "]"],
+
+	["punctuation", "}"]
+]
+
+----------------------------------------------------
+
+Schema definition example for an Input Type object (the token input-atom is borrowed from codemirror's naming scheme).
