@@ -36,7 +36,7 @@ mutation Login($email: String) {
   login(email: $email)
 }
 `]: `
-<span class="token keyword">mutation</span> <span class="token definition-mutation function">Login</span><span class="token punctuation">(</span><span class="token variable variable-input">$email</span><span class="token punctuation">:</span> <span class="token scalar class-name atom-input">String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">mutation</span> <span class="token definition-mutation function">Login</span><span class="token punctuation">(</span><span class="token variable variable-input">$email</span><span class="token punctuation">:</span> <span class="token scalar atom-input">String</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token property-query property-mutation">login</span><span class="token punctuation">(</span><span class="token attr-name">email</span><span class="token punctuation">:</span> <span class="token variable variable-input">$email</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 `,
@@ -52,7 +52,7 @@ mutation BookTrip($id:ID!) {
   }
 }
 `]: `
-<span class="token keyword">mutation</span> <span class="token definition-mutation function">BookTrip</span><span class="token punctuation">(</span><span class="token variable variable-input">$id</span><span class="token punctuation">:</span><span class="token scalar class-name atom-input">ID</span><span class="token operator">!</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">mutation</span> <span class="token definition-mutation function">BookTrip</span><span class="token punctuation">(</span><span class="token variable variable-input">$id</span><span class="token punctuation">:</span><span class="token scalar atom-input">ID</span><span class="token operator">!</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token property-query property-mutation">bookTrips</span><span class="token punctuation">(</span><span class="token attr-name">launchIds</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token variable variable-input">$id</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token property">success</span>
     <span class="token property">message</span>

@@ -27,10 +27,7 @@ Prism.languages.graphql = {
 		pattern: /[a-z_]\w*(?=\s*(?:\((?:[^()"]|"(?:\\.|[^\\"\r\n])*")*\))?:)/i,
 		greedy: true
 	},
-	'scalar': {
-		pattern: /\b(?:Boolean|Float|ID|Int|String)\b/,
-		alias: 'class-name'
-	},
+	'scalar': /\b(?:Boolean|Float|ID|Int|String)\b/,
 	'constant': /\b[A-Z][A-Z_\d]*\b/,
 	'class-name': {
 		pattern: /(\b(?:enum|implements|interface|on|scalar|type|union)\s+|&\s*|:\s*|\[)[A-Z_]\w*/,
