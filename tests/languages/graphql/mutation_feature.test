@@ -18,7 +18,7 @@ mutation orderUpdate($input: OrderInput!) {
 	["punctuation", "("],
 	["variable-input", "$input"],
 	["punctuation", ":"],
-	["class-name", "OrderInput"],
+	["atom-input", "OrderInput"],
 	["operator", "!"],
 	["punctuation", ")"],
 	["punctuation", "{"],

@@ -25,8 +25,7 @@ Prism.languages.graphql = {
 	},
 	'variable': /\$[a-z_]\w*/i,
 	'atom-input': {
-		pattern: /(\bmutation.*:\s*)\b[A-Z_]\w*\b!?/,
-		lookbehind: true,
+		pattern: /[A-Z]\w*Input(?=!?.*$)/m,
 		alias: 'class-name'
 	},
 	'directive': {
